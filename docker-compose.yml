@@ -1,0 +1,38 @@
+version: '3'
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodb
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    networks: 
+      - mynetwork1
+    volumes: 
+      - mongo-data:/data/db
+  front:
+    image: front
+    container_name: front
+    ports:
+      - 3000:80
+    networks:
+      - mynetwork1
+
+  back:
+    image: back
+    container_name: back
+    ports:
+       - 5000:5000
+    networks: 
+       - mynetwork1
+    depends_on: 
+       - mongodb
+networks:
+  mynetwork1:
+    driver: bridge
+volumes:
+ mongo-data: 
+    driver: local
