@@ -4,9 +4,9 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh cd
-                sh cd /home/zied/ws-docker-memo
-                sh docker commpose up -d
+                sh 'cd'
+                sh 'cd /home/zied/ws-docker-memo'
+                sh 'docker commpose up -d'
             
             }
         }
