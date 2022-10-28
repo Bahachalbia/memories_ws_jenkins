@@ -1,10 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh '''docker compose up -d
-'''
+        sh 'echo "hello"'
       }
     }
 
