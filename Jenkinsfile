@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                bat 'cd client && npm install' 
+                sh 'cd client && npm install' 
             }
         }
 
