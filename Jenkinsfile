@@ -7,6 +7,11 @@ pipeline {
                 sh 'cd client ' 
             }
         }
+        stage('run') {
+            steps {
+                sh 'npm install ' 
+            }
+        }
 
         stage('testing') {
             steps {
