@@ -12,7 +12,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                sh 'docker build -t bahachalbia/front:front .' 
+                sh 'docker build -t front .' 
             }
         }
         stage('login') {
