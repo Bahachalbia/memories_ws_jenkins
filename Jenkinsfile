@@ -5,7 +5,7 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('bahachalbia_dockerhub')
         }
     stages {
-        stage('build') {
+        stage('CD') {
             steps {
                 sh 'cd client' 
             }
