@@ -1,11 +1,17 @@
 pipeline {
-  agent any
-  stages {
-    stage('error') {
-      steps {
-        sh 'echo "hello"'
-      }
-    }
+    agent any
+    
+    stages {
+        stage('build') {
+            steps {
+                sh 'cd client && npm install' 
+            }
+        }
 
-  }
+        stage('testing') {
+            steps {
+                echo "testing...."
+            }
+        }
+    }
 }
