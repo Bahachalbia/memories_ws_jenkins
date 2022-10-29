@@ -1,7 +1,6 @@
 pipeline {
     agent any
-    tools {
-        nodejs '19.0.0'
+    
          }
     stages {
         stage('build') {
@@ -11,7 +10,7 @@ pipeline {
         }
         stage('run') {
             steps {
-                sh 'npm install ' 
+                sh 'npm version ' 
             }
         }
 
