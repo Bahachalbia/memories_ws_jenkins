@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'cd client ' 
+                sh 'cd client/src ' 
             }
         }
         stage('run') {
