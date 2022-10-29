@@ -8,7 +8,7 @@ pipeline {
      
         stage('build') {
             steps {
-                sh 'docker compose build front -t front' 
+                sh 'docker compose up -d' 
             }
         }
         stage('login') {
