@@ -1,21 +1,24 @@
 pipeline {
     agent any
     
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('bahachalbia_dockerhub')
+        }
     stages {
         stage('build') {
             steps {
-                sh 'cd client/src ' 
+                sh 'docker compose build bahachalbia/front -t front .' 
             }
         }
-        stage('run') {
+        stage('login') {
             steps {
-                sh 'npm version ' 
+                sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u bahachalbia  ' 
             }
         }
 
-        stage('testing') {
+        stage('push') {
             steps {
-                echo "testing...."
+                sh "docker push bahachalbia/front:front"
             }
         }
     }
