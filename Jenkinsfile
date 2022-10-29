@@ -5,14 +5,10 @@ pipeline {
         DOCKERHUB_CREDENTIALS = credentials('docker_jinkins')
         }
     stages {
-        stage('CD') {
-            steps {
-                sh 'cd client' 
-            }
-        }
+     
         stage('build') {
             steps {
-                sh 'docker build -t front .' 
+                sh 'docker compose build front -t front' 
             }
         }
         stage('login') {
