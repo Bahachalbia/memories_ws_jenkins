@@ -7,7 +7,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker compose build bahachalbia/front -t front .' 
+                sh 'cd client' 
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'docker build -t bahachalbia/front:front .' 
             }
         }
         stage('login') {
