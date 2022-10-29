@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKERHUB_CREDENTIALS = credentials('bahachalbia_dockerhub')
+        DOCKERHUB_CREDENTIALS = credentials('docker_jinkins')
         }
     stages {
         stage('CD') {
