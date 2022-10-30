@@ -8,7 +8,7 @@ pipeline {
      
         stage('build') {
             steps {
-                sh 'sudo su && docker compose up -d' 
+                sh 'docker compose up -d' 
             }
         }
         stage('login') {
