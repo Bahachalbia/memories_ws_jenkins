@@ -14,7 +14,7 @@ services:
     volumes: 
       - mongo-data:/data/db
   front:
-    image: front
+    image: bahachalbia/front
     container_name: front
     ports:
       - 3000:80
