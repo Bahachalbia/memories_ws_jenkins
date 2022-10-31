@@ -25,7 +25,7 @@ services:
     image: back
     container_name: back
     ports:
-       - 5000:5000
+       - 5001:5000
     networks: 
        - mynetwork1
     depends_on: 
