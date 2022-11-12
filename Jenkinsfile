@@ -18,7 +18,7 @@ pipeline {
                 sh "docker push bahachalbia/client"
             }
         }
-        stage('push') {
+        stage('push2') {
             steps {
                 sh "docker push bahachalbia/server"
             }
